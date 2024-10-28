@@ -1,0 +1,3 @@
+# This rule specifies that LF(Line Feed) (\n) line endings should always be used in Makefiles, so that Git does not automatically convert them to CRLF (\r\n) on Windows.
+# Force LF line endings for Makefile
+Makefile text eol=lf
