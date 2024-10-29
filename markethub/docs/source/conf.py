@@ -26,3 +26,13 @@ language = 'english'
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+
+import os
+
+# Get the current version from Read the Docs environment, fallback to "main" if not found
+project_version = os.getenv("READTHEDOCS_VERSION", "main")
+
+# Set up the HTML context for Sphinx, so it can display the version
+html_context = {
+    "display_version": project_version,
+}
