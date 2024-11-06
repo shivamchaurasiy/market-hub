@@ -18,7 +18,7 @@ Sphinx:
    Apne project directory mein jaake yeh command run karein:
    Yeh command Sphinx documentation ko HTML format mein build karega aur output ko build/html/ folder mein save karega.
    ```
-      make html
+   make html
    ```
 
 - 4. Documentation Dekhna
