@@ -9,24 +9,8 @@ markethub documentation
    "Market Hub."
 
 2. Introduction:
-      “Market Hub is a full-featured e-commerce shopping platform that allows users to browse, search, and purchase a variety of products. Built with Python and Django, it provides an easy-to-use shopping experience along with efficient order management and payment systems.”
+      "This e-commerce platform is designed using Django to provide a streamlined online shopping experience. Users can browse various products, manage their cart, and place orders with ease. Current functionalities include user authentication, profile management, cart and order management, and product filtering. The project currently focuses on mobile products, with options to filter based on brand and price range."
 
-3. Purpose:
-   Explain the goal:
-   “The main objective of this website is to offer a seamless and secure online shopping experience, connecting buyers with sellers. The platform aims to simplify the shopping process and ensure users can access products easily and complete purchases with confidence.”
-
-4. Key Features:
-   List the primary functionalities:
-   1. User Authentication:Secure login, registration, and account management.
-   2. Product Browsing and Search:Users can browse categories, search for products, and view product details.
-   3. Shopping Cart and Checkout: Adds items to cart, manages quantity, and completes the checkout process.
-   4. Order Management: Tracks order status, history, and user notifications.
-   5. Admin Dashboard: Product and order management tools for administrators.
-   6. Payment Gateway Integration: Running.
-
-5. Tech Stack:
-   Mention the technologies used in the project:
-   Python, Django, HTML, CSS, JavaScript, and AJAX.
 
 Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
@@ -37,8 +21,14 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
  
-   overview
-   features
-   installation
-   usage
+   introduction
+   features_overview
+   user_auth_profile_view
+   shopping_functionality
+   product_filtering_categories
+   checkout_process
+   installation_guide
+   configuration
+   usage_instructions
+   faqs
    branches
