@@ -9,6 +9,6 @@ User Authentication and Profile Management
 
 4. **Change Password**: Allows logged-in users to change their password from the profile section.
 
-5. **Forgot Password**: Users can reset their password by providing their email address to receive a reset link.
+5. **Forgot Password**: Users can reset their password by providing their email address to receive a reset link in the terminal.
 
 6. **Profile Section**: Users can view, add and manage multiple addresses for shipping purposes.

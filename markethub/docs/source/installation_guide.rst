@@ -55,7 +55,7 @@ Installation Guide
    Jaise, index.rst file mein introduction aur installation guide add kar sakte hain aur naye sections ke liye alag .rst files bana sakte hain.
 
 -  **Documentation Build Karna (Generate HTML)**:
-   Apne project directory mein jaake yeh command run karein:
+   Apne project directory (markethub/docs) mein jaake yeh command run karein:
    Yeh command Sphinx documentation ko HTML format mein build karega aur output ko build/html/ folder mein save karega.
    ```
    make html   

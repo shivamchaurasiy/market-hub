@@ -2,11 +2,11 @@ Usage Instructions
 ====================
 
 - **Navigating the Site**:
-    - **Header Menu**: Use the header dropdown to navigate through categories such as Mobile, Laptop, etc.
-    - **Product Details**: Click on a product to view more details, specifications, and reviews.
+    - **Header Menu**: Use the header dropdown to navigate through categories such as Electronics Mobile, Laptop and Fashion Top wear, Bottome wear etc.
+    - **Product Details**: Click on a product to view more details.
 
 - **Adding Products to Cart**:
-    - Add products by selecting quantity and clicking "Add to Cart" from the product detail page.
+    - Clicking "Add to Cart" and Go to cart from the product detail page.
 
 - **Checking Out**:
-    - Go to the cart and select "Place Order" to proceed through checkout. Select or add an address, review the order, and confirm the purchase.
+    - Go to the cart and select "Place Order" to proceed through checkout. Select or add an address, review the order, and continue the purchase.
