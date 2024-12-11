@@ -26,6 +26,7 @@ $('#slider1, #slider2, #slider3').owlCarousel({
 
 // Plus Cart
 $('.plus-cart').click(function() {
+// sourcery skip: avoid-using-var
     var id = $(this).attr('pid').toString();
 
     var eml = this.parentNode.children[2]
@@ -48,6 +49,7 @@ $('.plus-cart').click(function() {
 
 // Minus Cart
 $('.minus-cart').click(function() {
+// sourcery skip: avoid-using-var
     var id = $(this).attr('pid').toString();
 
     var eml = this.parentNode.children[2]
@@ -70,6 +72,7 @@ $('.minus-cart').click(function() {
 
 // Remove Cart
 $('.remove-cart').click(function() {
+// sourcery skip: avoid-using-var
     var id = $(this).attr('pid').toString();
 
     var eml = this

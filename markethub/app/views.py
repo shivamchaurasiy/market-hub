@@ -20,17 +20,6 @@ class ProductView(View):
 
 
 class ProductDetailView(View):
-    '''
-    About of Q Object
-    Queries ko Combine Karna: Aap Q objects ka istemal karke ek hi query mein multiple conditions ko combine kar sakte hain. Jaise agar aapko un users ko dhundhna hai jo kisi specific city se hain ya kisi specific email se hain:
-    Ex. = users = User.objects.filter(Q(city='Indore') | Q(email='example@example.com'))
-    
-    Conditions ko Chain Karna: Aap multiple Q objects ko chain kar sakte hain complex queries ke liye. Jaise agar aapko un users ko dhundhna hai jo kisi specific city se hain aur ya toh unka email specific ho ya unki age ek certain limit se zyada ho:
-    Ex = users = User.objects.filter(Q(city='Indore') & (Q(email='example@example.com') | Q(age__gt=30)))
-
-    Conditions ko Negate Karna: Aap kisi condition ko negate karne ke liye ~ (not) operator ka istemal bhi kar sakte hain. Jaise agar aapko un users ko dhundhna hai jo kisi specific city se nahi hain:
-    Ex = users = User.objects.filter(~Q(city='Indore'))
-    '''
     def get(self,request, id):
         product=Product.objects.get(pk=id)
         item_already_in_cart = False
@@ -43,9 +32,9 @@ def buy_now(request):
 
 
 def mobile(request, data=None):
-    if data == None:
+    if data is None:
         mobiles = Product.objects.filter(category='M')
-    elif data == 'Redmi' or data == 'Samsung':
+    elif data in ['Redmi', 'Samsung']:
         mobiles = Product.objects.filter(category='M').filter(brand=data)
     elif data == 'below':
         mobiles = Product.objects.filter(category='M').filter(selling_price__lt=10000)
@@ -108,14 +97,9 @@ def show_cart(request):
     if request.user.is_authenticated:
         user = request.user
         cart = Cart.objects.filter(user=user)
-        print(cart)
-        amount = 0.0
-        shipping_amount = 70.0
-        total_amount = 0.0
-        cart_product = [p for p in Cart.objects.all() if p.user == user]
-        print(cart_product)
-        
-        if cart_product:
+        if cart_product := [p for p in Cart.objects.all() if p.user == user]:
+            amount = 0.0
+            shipping_amount = 70.0
             for p in cart_product:
                 tempamount = (p.quantity * p.product.selling_price)
                 amount += tempamount
@@ -192,22 +176,22 @@ def remove_cart(request):
         return JsonResponse(data)
     
     
-@login_required 
+@login_required
 def checkout(request):
     user = request.user
     add = Customer.objects.filter(user=user)
     cart_items = Cart.objects.filter(user=user)
-    amount = 0.0
-    shipping_amount = 70.0
     totalamount = 0.0
-    cart_product = [p for p in Cart.objects.all() if p.user == request.user]
-    
-    if cart_product:
+    if cart_product := [
+        p for p in Cart.objects.all() if p.user == request.user
+    ]:
+        amount = 0.0
         for p in cart_product:
             tempamount = (p.quantity * p.product.selling_price)
             amount += tempamount
+        shipping_amount = 70.0
         totalamount = amount + shipping_amount
-    
+
     return render(request, 'app/checkout.html', {'add':add, 'totalamount':totalamount, 'cart_items':cart_items}) 
 
 @login_required
