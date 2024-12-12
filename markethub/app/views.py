@@ -182,9 +182,8 @@ def checkout(request):
     add = Customer.objects.filter(user=user)
     cart_items = Cart.objects.filter(user=user)
     totalamount = 0.0
-    if cart_product := [
-        p for p in Cart.objects.all() if p.user == request.user
-    ]:
+    # walrus operator (:=)
+    if cart_product := [p for p in Cart.objects.all() if p.user == request.user]:
         amount = 0.0
         for p in cart_product:
             tempamount = (p.quantity * p.product.selling_price)
