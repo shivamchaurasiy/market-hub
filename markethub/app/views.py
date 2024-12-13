@@ -3,7 +3,7 @@ from django.views import View           # view the product on category based
 # from .forms import Sign_Up, MyPasswordChangeForm
 from django.contrib import messages   #  messages alert
 from .models import Product, Cart, OrderPlaced, Customer
-from .forms import CustomRegistrationForm, CustomerProfileForm
+from .forms import CustomerRegistrationForm, CustomerProfileForm
 from django.db.models import Q
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
@@ -43,12 +43,12 @@ def mobile(request, data=None):
     return render(request, 'app/mobile.html', {'mobiles':mobiles})
 
 
-class CustomRegistrationView(View):
+class CustomerRegistrationView(View):
     def get(self, request):
-        form = CustomRegistrationForm()
+        form = CustomerRegistrationForm()
         return render(request, 'app/customerregistration.html', {'form':form})
     def post(self, request):
-        form = CustomRegistrationForm(request.POST)
+        form = CustomerRegistrationForm(request.POST)
         if form.is_valid():
             messages.success(request, 'Congratulations!! Registered Succesfully')
             form.save()
